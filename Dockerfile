@@ -2,7 +2,7 @@ FROM ishakuta/docker-lemp
 MAINTAINER Ivan Shakuta "ishakuta@gmail.com"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qy update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -qy install openjdk-7-jre-headless
+RUN DEBIAN_FRONTEND=noninteractive apt-get -qy install nodejs
 RUN apt-get -qy clean
 
 RUN wget -O /etc/nginx/sites-available/orocrm https://raw.github.com/ishakuta/docker-orocrm/master/orocrm-site &&  ln -s /etc/nginx/sites-available/orocrm /etc/nginx/sites-enabled/orocrm

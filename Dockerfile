@@ -9,4 +9,4 @@ RUN wget -O /etc/nginx/sites-available/orocrm https://raw.github.com/ishakuta/do
 RUN sed -i 's/memory_limit = .*/memory_limit = '512M'/' /etc/php5/fpm/php.ini && sed -i 's/date\.timezone = .*/date\.timezone = 'UTC'/' /etc/php5/fpm/php.ini
 RUN mkdir -p /var/www/orocrm/ && git clone https://github.com/orocrm/crm-application.git /var/www/orocrm
 
-RUN composer install && chown www-data:www-data -R /var/www/
+RUN cd /var/www/orocrm && composer install && chown www-data:www-data -R /var/www/
